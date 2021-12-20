@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Product Add</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body onload="prodType('dvd');">
+    <form method="post" id="product_form">
+        <div class="container">
+            <header>
+                <div class="row border-bottom border-dark mt-3 mb-5">
+                    <div class="col-sm-9">
+                        <span class="navbar-brand mb-0 h1">
+                            <h2>Product Add</h2>
+                        </span>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="d-flex justify-content-end">
+                            <input class="btn-sm mx-3" name="submit" type="submit" value="Save" id="save-product-btn" />
+                            <input class="btn-sm mx-3" type="button" value="Cancel" id="cancel-product-btn" onclick="location.href = 'index.php';" />
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="row mb-3">
+                <div class="form-group-row form-inline">
+                    <label class="col-sm-4 col-form-label justify-content-start" style="width: 150px;" for="SKU" value="SKU ">SKU</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control-sm" id="sku" name="sku" required="required" placeholder="Enter SKU">
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="form-group-row form-inline">
+                    <label class="col-sm-4 col-form-label justify-content-start" style="width: 150px;" for="Name">Name</label>
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control-sm" id="name" name="name" required="required" placeholder="Enter Name">
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="form-group form-inline">
+                    <label class="col-sm-4 col-form-label justify-content-start" style="width: 150px;" for="Price">Price ($)</label>
+                    <div class="col-sm-8">
+                        <input type="number" min="1" class="form-control-sm" id="price" name="price" required="required" placeholder="Enter Price">
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="form-group form-inline">
+                    <label class="col-sm-6 col-form-label justify-content-start" style="width: 150px;">Type Switcher</label>
+                    <div class="col-sm-4">
+                        <select id="productType" class="form-control-sm" name="type" default="dvd" onChange="prodType(this.value);">
+                            <option value="dvd">DVD</option>
+                            <option value="book">Book</option>
+                            <option value="furniture">Furniture</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="dvd">
+                <div class="form-group form-inline">
+                    <label class="col-sm-4 col-form-label justify-content-start" style="width: 150px;">Size (Mb)</label>
+                    <div class="col-sm-8">
+                        <input type="number" min="1" class="form-control-sm" id="size" name="size" value="" required="required" placeholder="Enter Size">
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="book">
+                <div class="form-group form-inline">
+                    <label class="col-sm-4 col-form-label justify-content-start" style="width: 150px;">Weight (Kg)</label>
+                    <div class="col-sm-8">
+                        <input type="number" min="1" class="form-control-sm" id="weight" name="weight" value="" required="required" placeholder="Enter Weight">
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="furniture">
+                <div class="form-group form-inline">
+                    <label class="col-sm-2 col-form-label justify-content-start" style="width: 42px;">Length (Cm)</label>
+                    <div class="col-sm-10 mb-3 justify-content-start">
+                        <input type="number" min="1" class="form-control-sm" id="length" name="length" required="required" placeholder="Enter Length">
+                    </div>
+                    <label class="col-sm-2 col-form-label justify-content-start" style="width: 42px;">Width (Cm)</label>
+                    <div class="col-sm-10 mb-3">
+                        <input type="number" min="1" class="form-control-sm" id="width" name="width" required="required" placeholder="Enter Width">
+                    </div>
+                    <label class="col-sm-2 col-form-label justify-content-start" style="width: 42px;">Height (Cm)</label>
+                    <div class="col-sm-10 mb-3">
+                        <input type="number" min="1" class="form-control-sm" id="height" name="height" required="required" placeholder="Enter Height">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <small id="desc">*Please Enter Your Dvd Size in Mb</small>
+                </div>
+            </div>
+            <footer>
+                <div class="row mt-5">
+                    <div class="col-lg-12">
+                        <div class="footer-copyright text-center py-3 border-top border-dark">
+                            <h5>Scandiweb Test assignment</h5>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="includes/function.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
